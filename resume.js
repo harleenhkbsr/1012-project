@@ -1,81 +1,69 @@
-function readFile() {
-    const wordAlternatives = {
-        "assisted": "aided",
-        "handled": "managed",
-        "helped": "supported",
-        "worked": "contributed",
-        "involved": "participated",
-        "responsible": "accountable",
-        "did": "performed",
-        "made": "created",
-        "role": "position",
-        "part": "role",
-        "took": "undertook",
-        "managed": "oversaw",
-        "led": "guided",
-        "ran": "operated",
-        "implemented": "executed",
-        "utilized": "used",
-        "collaborated": "worked together",
-        "gained": "acquired",
-        "learned": "acquired",
-        "challenges": "obstacles",
-        "dealt": "handled",
-        "time": "schedule",
-        "resources": "assets",
-        "pressure": "stress",
-        "performed": "executed",
-        "care": "manage",
-        "contributed": "added",
-        "opportunity": "chance",
-        "chance": "opportunity",
-        "able": "capable",
-        "allowed": "permitted",
-        "served": "worked",
-        "part": "component",
-        "job": "role",
-        "tasks": "duties",
-        "collaborated": "worked together",
-        "charge": "responsibility",
-        "use": "utilize",
-        "acquired": "obtained",
-        "tasked": "assigned",
-    };
-    const fileInput = document.getElementById("fileInput");
-    const output = document.getElementById("output");
+// alert("loaded")
+// import Typo from "typo-js"
+console.log(typeof Typo); // Should log "function"
 
-    const file = fileInput.files[0];
-    if (file) {
-        const reader = new FileReader();
-  
-        reader.onload = function(event) {
-          const fileContent = event.target.result;
-          const words = fileContent.split(/\s+/);
-  
-          output.innerHTML = "Consider making these switches: <br>";
-  
-          for (let i = 0; i < words.length; i++) {
-            if (wordAlternatives.hasOwnProperty(words[i].toLowerCase())) {
-              output.innerHTML += words[i] + " to " + wordAlternatives[words[i].toLowerCase()] + "<br>";
-            }
+
+function readFile() {
+  const fileInput = document.getElementById("fileInput");//preparing inputs and outputs
+  const output = document.getElementById("output");
+
+  const file = fileInput.files[0];
+  if (file) {
+      const reader = new FileReader();//preparing stuffs
+      var dictionary = new Typo("en_US", false, false, { dictionaryPath:"typo/dictionaries"});
+      // const dictionary = new Typo("en_US");
+      console.log(dictionary)
+
+      reader.onload = function(event) {//on load:
+        const fileContent = event.target.result;//read the file txt
+        const words = fileContent.split(/\s+/);//and split them to array of strings
+
+        output.innerHTML = "Consider making these switches: <br>";
+
+        alert(words)
+
+        for (let i = 0; i < words.length; i++) {//for every "word" in a array
+          alert(words[i])
+          if (spellcheckerTest(dictionary, words[i]) == false) {// if word is correctly spelled 
+            output.innerHTML += words[i] + " to " + dictionary.suggest(words[i]) + "<br>";//output false
           }
-        };
-  
-        reader.readAsText(file);
-      } else {
-        output.innerHTML = "No file selected.";
-      }
+        }
+      };
+
+      reader.readAsText(file);
+  } else {//exceptions
+    output.innerHTML = "No file selected.";
+  }
 }
 
+function spellcheckerTest(dictionary, word){//using Typo.js made by cfinke to check spelling
+
+  if (dictionary.check(word)){
+    return true
+  } else {
+    return false
+    console.log(dictionary.suggest(word))
+  }
+}
+
+// function checkLoaded(){
+//   alert("loaded")
+// }
+
+// spellcheckerTest("pple")
+
 document.addEventListener("DOMContentLoaded", () => {
-    const fileInput = document.getElementById("fileInput");
-    const fileStatus = document.getElementById("fileStatus");
-  
-    fileInput.addEventListener("change", () => {
-      if (fileInput.files.length > 0) {
-        fileStatus.textContent = "File Selected. Click Read File.";
-      } else {
-        fileStatus.textContent = "";
-      }
-    });
+  // alert("loaded")
+  const fileInput = document.getElementById("fileInput");
+  const fileStatus = document.getElementById("fileStatus");
+
+  fileInput.addEventListener("change", () => {
+    if (fileInput.files.length > 0) {
+      fileStatus.textContent = "File Selected. Click Read File.";
+    } else {
+      fileStatus.textContent = "";
+    }
   });
+});
+
+// export {checkLoaded, readFile}
