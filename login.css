@@ -12,7 +12,6 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    background: url("./login-background.jpg");
     background-color: whitesmoke;
     background-size: cover;
 }

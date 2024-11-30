@@ -148,64 +148,15 @@ body {
     text-decoration: none;
     padding: 18px 30px;
   }
-    
   
-  @font-face {
-    font-family: 'united-light';
-    src:url('fonts/UnitedSansReg-Light.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  h1 a{
+    text-decoration: none;
+    color: white;
   }
-  
-  @font-face {
-    font-family: 'united-medium';
-    src:url('fonts/UnitedSansReg-Medium.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
+
+  h1 a:hover{
+    text-decoration: none;
   }
-  
-  @font-face {
-    font-family: 'united-bold';
-    src:url('fonts/UnitedSansReg-Bold.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'adlam';
-    src:url('fonts/ADLaMDisplay-Regular.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'patua';
-    src:url('fonts/PatuaOne-Regular.ttf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'avenir-black';
-    src:url('fonts/AvenirLTStd-Black.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'avenir-book';
-    src:url('fonts/AvenirLTStd-Book.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'avenir-roman';
-    src:url('fonts/AvenirLTStd-Roman.otf') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
   
   .section1 .container {
     width: 100%;
