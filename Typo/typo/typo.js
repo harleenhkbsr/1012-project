@@ -7,6 +7,8 @@
  * Typo is a JavaScript implementation of a spellchecker using hunspell-style
  * dictionaries.
  */
+
+
 var Typo;
 (function () {
     "use strict";
@@ -840,3 +842,4 @@ var Typo;
 if (typeof module !== 'undefined') {
     module.exports = Typo;
 }
+
