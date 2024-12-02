@@ -1,6 +1,6 @@
+
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
-
     messageElement.textContent = message;
     messageElement.classList.remove("form__message--success", "form__message--error");
     messageElement.classList.add(`form__message--${type}`);
@@ -22,13 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
-
-        // Perform your AJAX/Fetch login
-
-        setFormMessage(loginForm, "error", "Invalid lols");
+        setFormMessage(loginForm, "error", "Invalid credentials");
     });
 
-        document.querySelectorAll(".form__input").forEach(inputElement => {
+    document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.type === "text" || e.target.type === "password") {
                 const inputValue = e.target.value.trim();
@@ -44,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
-    
         const usernameInput = loginForm.querySelector('input[type="text"]');
         const passwordInput = loginForm.querySelector('input[type="password"]');
         
@@ -52,14 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const passwordError = passwordInput.parentElement.querySelector(".form__input-error-message").textContent;
     
         const generalErrorMessage = document.querySelector("#generalErrorMessage");
-        
-        //checks for specific errors
+
         if (usernameError || passwordError) {
             generalErrorMessage.textContent = "Please fix the errors below before continuing.";
             return;
         }
     
-        //checks for empty username or password
         const usernameValue = usernameInput.value.trim();
         const passwordValue = passwordInput.value.trim();
     
@@ -68,16 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
     
-        //clears any existing general error message
         generalErrorMessage.textContent = "";
-    
         localStorage.setItem("loggedInUsername", usernameValue);
-
-    
-        //redirect to actual app
         window.location.href = "app.html";
-        
     });
-    const username = "username_from_login"; // Replace with the actual username
+
+    const username = "username_from_login";
     localStorage.setItem("loggedInUsername", username);
 });
+

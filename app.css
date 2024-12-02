@@ -131,3 +131,15 @@ body {
     margin-left: 10%;
     margin-bottom: 40px;
 }
+
+footer {
+    background-color: #688dbb;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: "avenir-book";
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,133 @@
+body {
+    font-family: "avenir-book";
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    margin: 0px;
+}
+
+.navbar {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    background-color: white;
+    z-index: 10;
+}
+
+.navtools {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item {
+    font-size: 18px;
+    padding: 0px 20px;
+    list-style-type: none;
+}
+
+.nav-item a {
+    color: black;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.login-block {
+    width: auto;
+    display: flex;
+}
+
+.login a {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.signup a {
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: #688dbb;
+    transition: 0.1s;
+}
+
+.login a:hover {
+    background-color: #f0f0f0;
+}
+
+.signup a:hover {
+    background-color: rgb(88, 120, 161);
+}
+
+.container {
+    padding: 50px;
+    margin-top: 20px;
+}
+
+.features-title {
+    font-size: 50px;
+    color: #000000;
+    text-align: center;
+}
+
+.features-highlight {
+    color: #688dbb; /* Dark Blue for "FEATURES" */
+}
+
+.features-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.features-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-list li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 15px;
+    background: #688dbb; /* Semi-transparent black */
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px #425d7e; /* Optional shadow effect */
+    backdrop-filter: blur(10px); /* Apply background blur effect */
+    width: 80%;
+    text-align: center;
+}
+
+.features-list li:hover {
+    background:#557499; /* Darken the background on hover */
+    box-shadow: 0 4px 15px #4a6586;
+}
+    
+footer {
+    background-color: #688dbb;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: "avenir-book";
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
