@@ -20,10 +20,9 @@ function readFile() {
 
         output.innerHTML = "Consider making these switches: <br>";
 
-        // alert(words)
 
         for (let i = 0; i < words.length; i++) {//for every "word" in a array
-          // alert(words[i])
+
           if (spellcheckerTest(dictionary, words[i]) == false) {// if word is correctly spelled 
             output.innerHTML += words[i] + " to " + dictionary.suggest(words[i]) + "<br>";//output false
           }
