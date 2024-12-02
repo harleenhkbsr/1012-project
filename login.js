@@ -71,3 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("loggedInUsername", username);
 });
 
+export function setFormMessage(element, message) { ... }
+export function setInputError(input, errorMessage) { ... }
+export function clearInputError(input) { ... }
+
